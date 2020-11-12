@@ -5,21 +5,55 @@ win = tk.Tk()
 win.title("triangle")
 win.geometry("600x400")
 
-a = 0
-b = 0
-c = 0
-h = 0
+a = ""
+b = ""
+c = ""
+h = ""
+
+abc = ""
+bca = ""
+cab = ""
+acb = ""
 
 def formula():
-    a = int(Entrya.get())
-    b = int(Entryb.get())
-    c = int(Entryc.get())
-    h = int(Entryh.get())
+    global a
+    global b
+    global c
+    global h
 
-    if b > 0 and h > 0:
+    global abc 
+    global bca 
+    global cab 
+    global acb 
+
+
+    abc = Entrya.get()
+    bca = Entryb.get()
+    cab = Entryc.get()
+    acb = Entryh.get()
+
+    if abc != "":
+        abc = int(abc)
+        a = abc
+
+    if bca != "":
+        bca = int(bca)
+        b = bca
+
+    if cab != "":
+        cab = int(cab)
+        c = cab
+
+    if acb != "":
+        acb = int(acb)
+        h = acb
+
+
+
+    if b != bca and h != acb:
         A = b*h/2
         print(A)
-    elif a > 0 and b > 0 and c > 0:
+    elif (abc != a) and (bca != b) and (cab != c):
         s = int((a+b+c)/2)
         A = (s*(s-a)*(s-b)*(s-c))**(1/2)
         print(A)
